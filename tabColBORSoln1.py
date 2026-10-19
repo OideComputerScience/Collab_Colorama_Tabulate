@@ -1,8 +1,8 @@
 import colorama
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 from tabulate import tabulate
 
-colorama.init(autoreset=True)
+init()
 
 # Dataset: [Name, Score]
 students = [
@@ -34,13 +34,13 @@ for row in students:
         status = "PASSED"
 
         score_str = (
-            Fore.GREEN
+            Fore.BLUE
             + str(score)
             + Style.RESET_ALL
         )
 
         status_str = (
-            Fore.GREEN
+            Fore.BLUE
             + status
             + Style.RESET_ALL
         )
@@ -49,13 +49,13 @@ for row in students:
         status = "FAILED"
 
         score_str = (
-            Fore.RED
+            Fore.MAGENTA
             + str(score)
             + Style.RESET_ALL
         )
 
         status_str = (
-            Fore.RED
+            Fore.MAGENTA
             + status
             + Style.RESET_ALL
         )

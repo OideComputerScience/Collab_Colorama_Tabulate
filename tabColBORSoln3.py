@@ -1,9 +1,9 @@
 import colorama
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 from tabulate import tabulate
 
 # Initialize Colorama
-colorama.init(autoreset=True)
+init()
 
 # Dataset: [Employee Name, Quarterly Sales Amount]
 sales_data = [
@@ -40,7 +40,7 @@ for row in sales_data:
 
         # Green if sales are 50,000 or more
         sales_str = "%s%s%s" % (
-            Fore.GREEN,
+            Fore.BLUE,
             formatted_sales,
             Style.RESET_ALL
         )
@@ -49,7 +49,7 @@ for row in sales_data:
 
         # Red if sales are below 50,000
         sales_str = "%s%s%s" % (
-            Fore.RED,
+            Fore.YELLOW,
             formatted_sales,
             Style.RESET_ALL
         )

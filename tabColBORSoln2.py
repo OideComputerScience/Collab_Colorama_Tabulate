@@ -1,8 +1,8 @@
 import colorama
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 from tabulate import tabulate
 
-colorama.init(autoreset=True)
+init()
 
 # Dataset: [Item Name, Current Stock]
 inventory_items = [
@@ -35,7 +35,7 @@ for row in inventory_items:
     if current < min_threshold:
 
         stock_styled = (
-            Fore.RED
+            Fore.YELLOW
             + str(current)
             + " (LOW STOCK)"
             + Style.RESET_ALL
@@ -44,7 +44,7 @@ for row in inventory_items:
     else:
 
         stock_styled = (
-            Fore.GREEN
+            Fore.CYAN
             + str(current)
             + Style.RESET_ALL
         )
